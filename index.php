@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form action="login.php" method= "POST">
+            <p>Username: </p> <input type="text" name = "user"/>
+            <p>Password: </p> <input type="password" name = "pass"/><br/>
+            <input type = "submit" value= "L O G I N"/>
+            </form>
+            
+            <a href= "new_user.php">Signup Here!</a>
+    </body>
+</html>
