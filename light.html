@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Light test</title>
+        <script type= "application/javascript">
+        function lightFade(lightId)
+        {
+            var lightOn = true;
+            var bri = 255;
+            var authCode = "Input the authCOde";
+            var urlStr = "http//put your ip address here after the slashes/api/";
+            urlStr += authCode;
+            urlStr += "/lights/" + lightId + "/state";
+            
+            sendAJAX(urlStr, "PUT",JSON.stringify({"on":false}));
+            
+            for(var i = 0;i<12;i++)
+            {
+                if(bri<=0)lightOn = false;
+                sendAJAX(urlStr,"PUT",JSON.stringify( {"bri": 0} );
+                bri -= 25;
+                sleepMs(200);
+               
+            }
+        }
+        function sendAJAX(url,method,str)
+        {
+            var req = new XMLHttpRequest();
+            req.open(method,url,true);
+            req.setRequestHeader("Content-Type","application/json");
+            req.send(str);
+        }
+        
+        function ()
+        {
+            var start = new Date().getTime();
+            while((new Date().getTime())<(start+msec));
+        }
+        function start()
+        {
+            document.getElementById("theButton").addEventListener(function() {lightFade(3);});
+        }
+        
+        window.addEventListener("load",start);
+        </script>
+    </head>
+</html>
+    
